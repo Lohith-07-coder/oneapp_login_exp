@@ -9,7 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth',authRoutes);
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+app.get('/', (req, res) => {
+    res.send("Auth API is running 🚀");
+});
+app.listen(5000, '0.0.0.0', () => {
+    console.log("Server running on port 5000");
 });
